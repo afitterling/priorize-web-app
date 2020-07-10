@@ -1,4 +1,4 @@
 {"items": [
-    {"name": "llkjlkj", "id": 1},
-    {"name": "Patrick", "id": 2}
+    {"name": "Buch lesen", "id": 1, "label": "F"},
+    {"name": "IT Lernen", "id": 2, "label": "IT"}
 ]}

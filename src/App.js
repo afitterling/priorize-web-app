@@ -6,7 +6,11 @@ import {
   Route
 } from "react-router-dom";
 
-import { Label, Header } from 'semantic-ui-react'
+import { 
+  Label,
+  Header,
+  Icon
+} from 'semantic-ui-react'
 
 function App() {
 
@@ -26,7 +30,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header as='h1'>First Header</Header>      <Router>
+      <Header as='h1'>Priorize App</Header>
+      <Router>
         <div>
           <Switch>
             <Route path="/">
@@ -40,17 +45,24 @@ function App() {
 }
 
 
-function Home({items}) {
+function Home({ items }) {
   return (
     <div>
-    { items.map( i => {
-        console.log(i);
-        return (<Label key={i.id} as='a' color='blue' image>
-          <i>A</i>
-          <Label.Detail>{i.name}</Label.Detail>
-        </Label>)
-    })}
-    </div> );
+      <Header as='h3'>Manage Activities</Header>
+      <div>
+        {items.map(i => {
+          return (<Label key={i.id} as='a' color='blue' image>
+            <i>{i.label}</i>
+            <Label.Detail>
+              {i.name} <Icon name='delete' />
+            </Label.Detail>
+          </Label>)
+        })}
+        <Label color='black'>
+          <Icon name='add' />Add
+        </Label>
+      </div>
+    </div>);
 }
 
 export default App;
